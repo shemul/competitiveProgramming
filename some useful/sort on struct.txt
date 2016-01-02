@@ -1,0 +1,50 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <algorithm>
+using namespace std;
+
+struct data {
+
+    int height, weight;
+    long long income;
+
+    bool operator < ( const data& b ) const {
+        return income < b.income;
+    }
+
+};
+int main(){
+
+    struct data d1 , d2 , d3;
+
+    d1.height= 5 ;
+    d1.income = 10;
+    d1.weight = 8 ;
+
+    d2.height= 5 ;
+    d2.income = 15;
+    d2.weight = 2 ;
+
+    d3.height= 5 ;
+    d3.income = 5;
+    d3.weight = 9 ;
+
+    vector <data> v ;
+    v.push_back(d1);
+    v.push_back(d2);
+    v.push_back(d3);
+
+    sort(v.begin() , v.end() );
+
+    for(int i = 0 ; i < v.size() ; i++) {
+        cout << v[i].income << endl;
+        cout << v[i].height << endl;
+        cout << v[i].weight << endl;
+        cout << endl <<endl;
+    }
+
+}
